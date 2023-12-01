@@ -129,6 +129,31 @@ public class LL {
         System.out.println("Now the size of the linkedlist is "+getSize());
     }
 
+    public void add_sorted(int data){
+        Node node = new Node(data);
+        if(head==null || node.data<head.data){
+            node.next = head;
+            head = node;
+            size++;
+            if(tail == null){
+                tail = head;
+            }
+            return;
+        }
+
+        Node temp = head;
+        while (temp.next!=null && data>temp.next.data){
+            temp = temp.next;
+        }
+        node.next = temp.next;
+        temp.next = node;
+        size++;
+
+        if(node.next == null){
+            tail = node;
+        }
+    }
+
     public void displayLL(){
         if(head==null){
             System.out.println("List is empty");
