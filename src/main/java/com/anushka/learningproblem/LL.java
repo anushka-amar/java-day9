@@ -12,10 +12,26 @@ public class LL {
         if(head == null){
             head = node;
             node.next = null;
+            size++;
             return;
         }
         node.next = head;
         head = node;
+        size++;
+    }
+
+    public void append(int data){
+        Node node = new Node(data);
+        if(size==0){
+            addFirst(data);
+            return;
+        }
+        Node temp = head;
+        while (temp.next!=null){
+            temp = temp.next;
+        }
+        temp.next = node;
+        node.next = null;
         size++;
     }
 

@@ -6,6 +6,11 @@ public class Main {
      list1.addFirst(70);
      list1.addFirst(30);
      list1.addFirst(56);
-     list1.displayLL();
+
+     LL list2 = new LL();
+     list2.append(56);
+     list2.append(30);
+     list2.append(70);
+     list2.displayLL();
     }
 }
