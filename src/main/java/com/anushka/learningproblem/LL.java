@@ -84,18 +84,33 @@ public class LL {
         return val;
     }
 
-    public void search(int val){
-        Node temp = head;
+    public int search(int val){
+        Node temp = head; int index=0;
         System.out.println("Searching for "+val);
         while (temp!=null){
             if(temp.data == val){
-                System.out.println("Element found!");
-                return;
+                System.out.println("Element found at "+index);
+                return index;
             }
             temp = temp.next;
+            index++;
         }
         System.out.println("Element not found!");
+        return -1;
     }
+
+    public void insertAtPos(int val, int key){
+        int index = search(key);
+        Node temp = head, node = new Node(val);
+
+        for(int i=0; i<index; i++){
+            temp = temp.next;
+        }
+        node.next = temp.next;
+        temp.next = node;
+
+    }
+
     public void displayLL(){
         if(head==null){
             System.out.println("List is empty");
