@@ -27,6 +27,26 @@ public class Stack {
         System.out.println(data+ " pushed into the stack sucessfully!");
     }
 
+    public int peek(){
+        if(top == null){
+            System.out.println("stack underflow");
+            return -1;
+        }
+        return top.data;
+    }
+
+    public int pop(){
+
+        if(isEmpty()){
+            System.out.println("stack is empty");
+            return 0;
+        }
+        int popVal = top.data;
+
+        top = top.next;
+        return popVal;
+    }
+
     public void display_stack(){
         Node current = top;
 
