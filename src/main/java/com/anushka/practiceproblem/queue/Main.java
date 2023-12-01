@@ -8,6 +8,9 @@ public class Main {
         queue.enqueue(30);
         queue.enqueue(70);
         queue.display();
-        System.out.println(queue.size());
+        System.out.print("size of the queue is "+queue.size());
+
+        System.out.println("\nDequeued item is "+queue.dequeue());
+        queue.display();
     }
 }

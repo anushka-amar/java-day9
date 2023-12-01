@@ -31,6 +31,16 @@ public class Queue {
         size++;
     }
 
+    public int dequeue(){
+        if(isEmpty()){
+            System.out.println("Queue is empty. Nothing to dequeue");
+            return 0;
+        }
+        int dequeued_val = front.data;
+        front = front.next;
+        return dequeued_val;
+    }
+
     public void display(){
         if(isEmpty()){
             System.out.println("The queue is empty, please insert first");
