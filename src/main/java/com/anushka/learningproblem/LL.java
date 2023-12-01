@@ -7,6 +7,10 @@ public class LL {
         this.size = 0;
     }
 
+    public int getSize(){
+        return this.size;
+    }
+
     public void addFirst(int data){
         Node node = new Node(data);
         if(head == null){
@@ -35,6 +39,22 @@ public class LL {
         size++;
     }
 
+    public void insert_middle(int data){
+        Node node = new Node(data);
+        if(size==0){
+            System.out.println("List is empty");
+            return;
+        }
+        int index = (size/2)-1;
+        Node temp = head;
+        for(int i=0; i<index; i++){
+            temp=temp.next;
+        }
+        node.next = temp.next;
+        temp.next = node;
+
+    }
+
     public void displayLL(){
         if(head==null){
             System.out.println("List is empty");
@@ -45,7 +65,7 @@ public class LL {
             System.out.print(temp.data+" -> ");
             temp = temp.next;
         }
-        System.out.print("NULL");
+        System.out.print("NULL\n");
     }
     private class Node{
         private int data;

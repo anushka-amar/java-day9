@@ -9,8 +9,9 @@ public class Main {
 
      LL list2 = new LL();
      list2.append(56);
-     list2.append(30);
      list2.append(70);
+     list2.insert_middle(30);
      list2.displayLL();
+
     }
 }
