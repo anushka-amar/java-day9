@@ -109,6 +109,24 @@ public class LL {
         node.next = temp.next;
         temp.next = node;
 
+        if(index>-1){
+            size++;
+        }
+    }
+
+    public void popAtpos(int key){
+        Node prev=head, temp=head;
+        int index = search(key);
+        for(int i=0; i<index; i++){
+            prev = temp;
+            temp = temp.next;
+        }
+        prev.next = temp.next;
+        temp.next = null;
+        if(index>-1){
+            size--;
+        }
+        System.out.println("Now the size of the linkedlist is "+getSize());
     }
 
     public void displayLL(){

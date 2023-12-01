@@ -11,12 +11,10 @@ public class Main {
      list2.append(56);
      list2.append(70);
      list2.insert_middle(30);
-     list2.displayLL();
-     System.out.println(list2.popLast()); //functionality to delete first node
-     list2.displayLL();
      list2.search(30);
      list2.insertAtPos(40, 30);
      list2.displayLL();
-
+     list2.popAtpos(40);
+     list2.displayLL();
     }
 }
