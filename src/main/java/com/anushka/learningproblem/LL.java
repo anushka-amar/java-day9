@@ -2,6 +2,7 @@ package com.anushka.learningproblem;
 
 public class LL {
     private Node head;
+    private Node tail;
     private int size;
     public LL(){
         this.size = 0;
@@ -15,11 +16,13 @@ public class LL {
         Node node = new Node(data);
         if(head == null){
             head = node;
+            tail = head;
             node.next = null;
             size++;
             return;
         }
         node.next = head;
+        tail = head;
         head = node;
         size++;
     }
@@ -30,12 +33,9 @@ public class LL {
             addFirst(data);
             return;
         }
-        Node temp = head;
-        while (temp.next!=null){
-            temp = temp.next;
-        }
-        temp.next = node;
-        node.next = null;
+
+        tail.next = node;
+        tail = node;
         size++;
     }
 
@@ -62,6 +62,24 @@ public class LL {
         }
         int val = head.data;
         head = head.next;
+        if(head==null){
+            tail=null;
+        }
+        size--;
+        return val;
+    }
+
+    public int popLast(){
+        if(size<=1){
+            return pop();
+        }
+        int val = tail.data;
+        Node temp = head;
+        while (temp.next.next!=null){
+            temp = temp.next;
+        }
+        tail = temp;
+        tail.next = null;
         size--;
         return val;
     }
