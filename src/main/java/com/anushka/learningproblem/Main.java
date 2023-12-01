@@ -14,6 +14,7 @@ public class Main {
      list2.displayLL();
      System.out.println(list2.popLast()); //functionality to delete first node
      list2.displayLL();
+     list2.search(30);
 
     }
 }

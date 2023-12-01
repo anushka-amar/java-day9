@@ -84,6 +84,18 @@ public class LL {
         return val;
     }
 
+    public void search(int val){
+        Node temp = head;
+        System.out.println("Searching for "+val);
+        while (temp!=null){
+            if(temp.data == val){
+                System.out.println("Element found!");
+                return;
+            }
+            temp = temp.next;
+        }
+        System.out.println("Element not found!");
+    }
     public void displayLL(){
         if(head==null){
             System.out.println("List is empty");
