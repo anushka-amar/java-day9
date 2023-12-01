@@ -12,6 +12,8 @@ public class Main {
      list2.append(70);
      list2.insert_middle(30);
      list2.displayLL();
+     System.out.println(list2.pop()); //functionality to delete first node
+     list2.displayLL();
 
     }
 }

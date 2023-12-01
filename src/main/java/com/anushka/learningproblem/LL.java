@@ -52,7 +52,18 @@ public class LL {
         }
         node.next = temp.next;
         temp.next = node;
+        size++;
+    }
 
+    public int pop(){
+        if(size==0){
+            System.out.println("List already is empty");
+            return 0;
+        }
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
     }
 
     public void displayLL(){
